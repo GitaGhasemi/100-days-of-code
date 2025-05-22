@@ -6,7 +6,7 @@ print(f"{row1}\n{row2}\n{row3}")
 position = input("Where do you want to put the treasure? ")
 
 # -1 to get the index
-# in this line we find the proper row from map
+# in this line we find the proper row from the map
 which_element_of_map = (int(position) % 10) - 1
 
 # -1 to get the index
