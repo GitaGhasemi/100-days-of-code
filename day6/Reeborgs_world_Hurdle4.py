@@ -9,33 +9,23 @@ def turn_right():
     turn_left()
     turn_left()
 
-def turn_step():
+def jump():
     turn_left()
-    move()
+    while wall_on_right():
+        move()
     turn_right()
     move()
     turn_right()
-    move()
-    turn_left()
-
-count = 0    
-    
+    while front_is_clear():
+        move()
+    turn_left()    
+  
 while not at_goal():
-    if front_is_clear():
-        if count > 0:
-            move()
-            turn_right()
-            while count > 0:
-                move()                
-            
+    if wall_in_front():
+        jump()
     else:
-        while wall_in_front():
-            turn_left()
-            move()
-            turn_right()
-            count += 1
-
-
+        move()
+  
 ################################################################
 # WARNING: Do not change this comment.
 # Library Code is below.
